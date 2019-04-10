@@ -4,7 +4,6 @@ if [ "$#" -ne 5 ]; then
     echo "Illegal number of parameters"
     exit
 fi
-rm -rf $4/.git
 lftp -f "
 set ftp:ssl-allow off
 open $1
