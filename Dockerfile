@@ -4,7 +4,7 @@ RUN mkdir ~/.lftp
 RUN echo "set ssl:verify-certificate no" >> ~/.lftp/rc
 RUN mkdir /scripts
 COPY entrypoint.sh /scripts/upload
-export PATH="$PATH:/scripts/upload"
+RUN export PATH="$PATH:/scripts/upload"
 COPY entrypoint.sh /upload.sh
 COPY entrypoint.sh /bin/upload
 RUN chmod +x /upload.sh
