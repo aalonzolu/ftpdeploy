@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "Usage: upload ftp.example.com user password ./source_dir ./remote_dir"
 echo "Uploading $4 to $2:$3@$1:$5"
 lftp -f "
