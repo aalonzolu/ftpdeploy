@@ -13,4 +13,3 @@ bye"'\
 >> /upload.sh
 RUN cat /upload.sh
 RUN chmod +x /upload.sh
-ENTRYPOINT ["/upload.sh"]
