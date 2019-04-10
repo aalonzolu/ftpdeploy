@@ -8,5 +8,6 @@ lcd $SOURCEFOLDER\n\
 mirror --reverse --delete --verbose $SOURCEFOLDER $TARGETFOLDER\n\
 bye"'\
 >> /upload.sh
+cat /upload.sh
 chmod +x /upload.sh
 ENTRYPOINT ["mysql"]
