@@ -9,5 +9,5 @@ mirror --reverse --delete --verbose $SOURCEFOLDER $TARGETFOLDER\n\
 bye"'\
 >> /upload.sh
 RUN cat /upload.sh
-chmod +x /upload.sh
-ENTRYPOINT ["mysql"]
+RUN chmod +x /upload.sh
+ENTRYPOINT ["/upload.sh"]
