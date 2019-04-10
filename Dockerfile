@@ -2,14 +2,8 @@ FROM alpine:3.7
 RUN apk add --no-cache lftp
 RUN mkdir ~/.lftp
 RUN echo "set ssl:verify-certificate no" >> ~/.lftp/rc
-RUN echo '#!/bin/bash\n\
-lftp -f "\n\
-set ftp:ssl-allow off\n\
-open $HOST\n\
-user $USER $PASS\n\
-lcd $SOURCEFOLDER\n\
-mirror --reverse --delete --verbose $SOURCEFOLDER $TARGETFOLDER\n\
-bye"'\
->> /upload.sh
-RUN cat /upload.sh
+COPY entrypoint.sh /upload.sh
+COPY entrypoint.sh /usr/local/bin/upload.sh
 RUN chmod +x /upload.sh
+RUN chmod +x /usr/local/bin/upload.sh
+ENTRYPOINT ["/entrypoint.sh"]
