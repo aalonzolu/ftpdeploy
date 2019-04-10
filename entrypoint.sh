@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "Usage: upload ftp.example.com user password ./source_dir ./remote_dir"
+rm -rf $4/.git
 lftp -f "
 set ftp:ssl-allow off
 open $1
