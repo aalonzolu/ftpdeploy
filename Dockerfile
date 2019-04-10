@@ -6,4 +6,4 @@ COPY entrypoint.sh /upload.sh
 COPY entrypoint.sh /usr/local/bin/upload.sh
 RUN chmod +x /upload.sh
 RUN chmod +x /usr/local/bin/upload.sh
-ENTRYPOINT ["/entrypoint.sh"]
+
