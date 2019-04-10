@@ -1,5 +1,7 @@
 FROM alpine:3.7
 RUN apk add --no-cache lftp
+RUN mkdir ~/.lftp
+RUN echo "set ssl:verify-certificate no" >> ~/.lftp/rc
 RUN echo 'lftp -f "\n\
 set ftp:ssl-allow off\n\
 open $HOST\n\
